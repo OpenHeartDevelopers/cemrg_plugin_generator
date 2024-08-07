@@ -15,7 +15,7 @@ class PluginGenerator:
         self.fill_placeholder_variables()
 
         self.file_names = {
-            'mitkPluginActivator' : self.replacements['activator-class-name'], 
+            'mitkPluginActivator' : self.replacements['activator-class-name'],
             'QmitkTemplateView': self.replacements['view-class-name']
         }
 
@@ -34,15 +34,15 @@ class PluginGenerator:
         self.replacements  = {
             'plugin-target' : self.symbolic_name.replace('.', '_'),
             'plugin-symbolic-name' : self.symbolic_name, 
-            'plugin-name' : self.plugin_name,
-            'plugin-export-directive' : self.plugin_name.upper(),
-            'activator-file-name' : self.symbolic_name.replace('.', '_'),
+            'plugin-name' : self.plugin_name.replace(' ', ''),
+            'plugin-export-directive' : self.symbolic_name.split(".")[-1].upper() + "_EXPORT",
+            'activator-file-name' : self.symbolic_name.replace('.', '_') + '_Activator',
             'activator-class-name' : self.symbolic_name.replace('.', '_') + '_Activator',
-            'view-file-name' : self.plugin_name,
+            'view-file-name' : f'{self.view_name}View',
+            'view-class-name': f'{self.view_name}View',
             'vendor' : self.vendor,
             'view-id' : f'org.mitk.views.{self.view_name.lower()}view',
             'view-name' : self.view_name,
-            'view-class-name' : f'{self.view_name}View', 
             'license' : self.get_license_text()
         }
 

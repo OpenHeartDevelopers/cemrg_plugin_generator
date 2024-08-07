@@ -31,7 +31,8 @@ def main(args) :
     if args.debug is True:
         plugin_generator.print_self()
         
-    plugin_generator.create_plugin(plugin_generator.output_name())
+    # plugin_generator.create_plugin(plugin_generator.output_name())
+    plugin_generator.create_plugin(args.symbolic_name)
 
 
 
@@ -41,7 +42,7 @@ if __name__ == '__main__':
     parser.add_argument('-pn', '--plugin-name', type=str, help='Plugin name')
     parser.add_argument('-sn', '--symbolic-name', type=str, help='Symbolic name', default='kcl.cemrgapp.myplugin')
     parser.add_argument('-vn', '--view-name', type=str, help='View name', default='MyView')
-    parser.add_argument('-v', '--vendor', type=str, help='Vendor', default='CEMRG')
+    parser.add_argument('-v', '--vendor', type=str, help='Vendor', default='KCL')
     parser.add_argument('-l', '--license', type=str, help='License file', default='')
     parser.add_argument('-d', '--debug' , action='store_true', help='Debug mode')
     parser.add_argument('-ow', '--overwrite' , action='store_true', help='Overwrite mode')
