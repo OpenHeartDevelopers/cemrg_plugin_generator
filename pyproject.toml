@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "cemrg-plugin-generator"
+version = "0.1.0"
+description = ""
+authors = ["Jose Alonso Solis-Lemus <jsolislemus@cemrg-mbp.home>"]
+readme = "README.md"
+packages = [{include = "cemrg_plugin_generator"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
