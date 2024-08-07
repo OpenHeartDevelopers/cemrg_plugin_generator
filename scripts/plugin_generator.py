@@ -36,11 +36,12 @@ def main(args) :
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Test copy function')
+    parser = argparse.ArgumentParser(description='Create a new plugin')
+    parser.add_argument('-o', '--output', type=str, help='Output folder', default='.')
     parser.add_argument('-pn', '--plugin-name', type=str, help='Plugin name')
     parser.add_argument('-sn', '--symbolic-name', type=str, help='Symbolic name', default='kcl.cemrgapp.myplugin')
     parser.add_argument('-vn', '--view-name', type=str, help='View name', default='MyView')
-    parser.add_argument('-v', '--vendor', type=str, help='Vendor', default='MyVendor')
+    parser.add_argument('-v', '--vendor', type=str, help='Vendor', default='CEMRG')
     parser.add_argument('-l', '--license', type=str, help='License file', default='')
     parser.add_argument('-d', '--debug' , action='store_true', help='Debug mode')
     parser.add_argument('-ow', '--overwrite' , action='store_true', help='Overwrite mode')
