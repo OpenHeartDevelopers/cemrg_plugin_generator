@@ -38,11 +38,11 @@ class PluginGenerator:
             'plugin-export-directive' : self.symbolic_name.split(".")[-1].upper() + "_EXPORT",
             'activator-file-name' : self.symbolic_name.replace('.', '_') + '_Activator',
             'activator-class-name' : self.symbolic_name.replace('.', '_') + '_Activator',
+            'view-id': f'org.mitk.views.{self.view_name.lower()}view',
+            'view-name': self.view_name,
             'view-file-name' : f'{self.view_name}View',
             'view-class-name': f'{self.view_name}View',
             'vendor' : self.vendor,
-            'view-id' : f'org.mitk.views.{self.view_name.lower()}view',
-            'view-name' : self.view_name,
             'license' : self.get_license_text()
         }
 
